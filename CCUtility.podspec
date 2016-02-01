@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                    DESC
 
-  s.homepage     = "http://EXAMPLE/CCUtility"
+  s.homepage     = "https://github.com/chinaspx/PPUtilities"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -92,9 +92,9 @@ Pod::Spec.new do |s|
 
   s.source_files  = "Category", "Category/**/*.{h,m}"
   s.source_files  = "Helper", "Helper/**/*.{h,m}"
-  s.exclude_files = "Macro"
+  s.exclude_files = "Macro/**/*.{h,m}"
 
-  # s.public_header_files = "**/*.h"
+  s.public_header_files = "**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
