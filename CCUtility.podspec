@@ -93,19 +93,59 @@ Pod::Spec.new do |s|
   s.source_files  = "PPUtilities.h"
   s.public_header_files = "PPUtilities.h"
 
-  s.subspec = 'Macro' do |macro|
-    macro.souce_files = "Macro/**/*.{h,m}"
-  end
-  
-  s.subspec = 'Helper' do |helper|
-    helper.souce_files = "Helper/**/*.{h,m}"
-  end
-  
-  s.subspec = 'Category' do |category|
-    category.souce_files = "Category/**/*.{h,m}"
+  s.subspec 'Macro' do  |macro|
+    macro.source_files =  "Macro/**/*.{h,m}"
   end
 
+  s.subspec 'Helper' do  |helperSub|
+    helperSub.source_files =  "Helper/**/*.{h,m}"
+  end
 
+  s.subspec 'Category' do  |categorySub|
+    categorySub.source_files =  "Category/NBCategory.h"
+
+    categorySub.subspec 'ExternCategory' do |externCategorySub|
+       externCategorySub.source_files  = "Category/ExternCategory/**/*.{h,m}" 
+    end
+
+    categorySub.subspec 'IMCategory' do |iMCategorySub|
+        iMCategorySub.source_files  = "Category/IMCategory/**/*.{h,m}" 
+    end
+
+    categorySub.subspec 'UIViewCategory' do |uIViewCategorySub|
+        uIViewCategorySub.source_files  = "Category/UIViewCategory/**/*.{h,m}" 
+    end
+
+    categorySub.subspec 'UINavigationBarCategory' do |uINavigationBarCategorySub|
+        uINavigationBarCategorySub.source_files  = "Category/UINavigationBarCategory/**/*.{h,m}" 
+    end
+
+    categorySub.subspec 'UIImageCategory' do |uIImageCategorySub|
+        uIImageCategorySub.source_files  = "Category/UIImageCategory/**/*.{h,m}" 
+    end
+
+    categorySub.subspec 'UIButtonCategory' do |uIButtonCategorySub|
+        uIButtonCategorySub.source_files  = "Category/UIButtonCategory/**/*.{h,m}" 
+    end
+
+    categorySub.subspec 'StoryboardHelper' do |storyboardHelperSub|
+        storyboardHelperSub.source_files  = "Category/StoryboardHelper/**/*.{h,m}" 
+    end 
+
+    categorySub.subspec 'NSStringCategory' do |nSStringCategorySub|
+        nSStringCategorySub.source_files  = "Category/NSStringCategory/**/*.{h,m}" 
+    end 
+
+    categorySub.subspec 'OthersCategory' do |othersCategorySub|
+        othersCategorySub.source_files  = "Category/OthersCategory/**/*.{h,m}" 
+    end 
+    
+    categorySub.subspec 'JSON' do |jSONSub|
+        jSONSub.source_files  = "Category/JSON/**/*.{h,m}" 
+    end 
+  end
+  
+  
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
