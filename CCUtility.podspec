@@ -90,11 +90,20 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Category", "Category/**/*.{h,m}"
-  s.source_files  = "Helper", "Helper/**/*.{h,m}"
-  s.exclude_files = "Macro/**/*.{h,m}"
+  s.source_files  = "PPUtilities.h"
+  s.public_header_files = "PPUtilities.h"
 
-  s.public_header_files = "**/*.h"
+  s.subspec = 'Macro' do |macro|
+    macro.souce_files = "Macro/**/*.{h,m}"
+  end
+  
+  s.subspec = 'Helper' do |helper|
+    helper.souce_files = "Helper/**/*.{h,m}"
+  end
+  
+  s.subspec = 'Category' do |category|
+    category.souce_files = "Category/**/*.{h,m}"
+  end
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
